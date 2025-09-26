@@ -1,8 +1,7 @@
 #include <stdio.h>
 
 // Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das cartas
-// Objetivo: No nível novato você deve criar as cartas representando as cidades utilizando scanf para entrada de dados e printf para exibir as informações.
+// Tema 2 - Calculando a Densidade Populacional e PIB per Capita
 
 int main() {
   // Área para definição das variáveis para armazenar as propriedades das cidades
@@ -10,24 +9,33 @@ int main() {
   // Variáveis da Carta 1
 
   char estado1[20] = "Paraíba";
-  char cidade1[20] = "Guarabira";
-  char codigo1[10] = "P01";
-  int populacao1 = 8000;
-  float area1 = 25000000;
-  float pib1 = 25.0;
-  int pontosturisticos1 = 10;
+  char cidade1[50] = "Guarabira";
+  char codigo1[20] = "P01";
+  int populacao1;
+  float area1;
+  float pib1;
+  int pontosturisticos1;
+  float densidadepopulacional1;
+  double pibpercapita1;
 
   // Variáveis da Carta 2
 
   char estado2[20] = "Pernambuco";
-  char cidade2[20] = "Recife";
-  char codigo2[10] = "P02";
-  int populacao2 = 7000;
-  float area2 = 20000000;
-  float pib2 = 20.0;
-  int pontosturisticos2 = 12;
+  char cidade2[50] = "Recife";
+  char codigo2[20] = "P02";
+  int populacao2;
+  float area2;
+  float pib2;
+  int pontosturisticos2;
+  float densidadepopulacional2;
+  double pibpercapita2;
 
-  // Área para entrada dos dados
+  // Cálculos da Densidade Populacional e PIB per Capita das Cartas 1 e 2:
+
+  densidadepopulacional1 = (float) populacao1 / area1;
+  pibpercapita1 = (double) pib1 / populacao1;
+  densidadepopulacional2 = (float) populacao2 / area2;
+  pibpercapita2 = (double) pib2 / populacao2;
 
   // Comandos para o jogador colocar os dados da carta:
 
@@ -52,17 +60,17 @@ int main() {
   printf("Pontos Turísticos: \n");
   scanf("%d", &pontosturisticos1, &pontosturisticos2);
 
-  // Área para exibição dos dados
-
   // Comandos para a impressão das informações na tela:
 
   printf("Estado: %s\n", estado1, estado2);
   printf("Cidade: %s\n", cidade1, cidade2);
   printf("Código: %s\n", codigo1, codigo2);
   printf("População: %d\n", populacao1, populacao2);
-  printf("Área: %.0f\n", area1, area2);
-  printf("PIB: %.0f\n", pib1, pib2);
+  printf("Área: %.2f km²\n", area1, area2);
+  printf("PIB: %.2f Bilhões de Reais\n", pib1, pib2);
   printf("Pontos Turísticos: %d\n", pontosturisticos1, pontosturisticos2);
+  printf("Densidade Populacional: %.2f hab/km²\n", densidadepopulacional1, densidadepopulacional2);
+  printf("PIB per Capita: %.2f Reais\n", pibpercapita1, pibpercapita2);
 
 return 0;
 }
